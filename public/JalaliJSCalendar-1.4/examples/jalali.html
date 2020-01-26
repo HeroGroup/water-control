@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../skins/aqua/theme.css" title="Aqua" />
+
+    <!-- import the Jalali Date Class script -->
+    <script type="text/javascript" src="../jalali.js"></script>
+
+    <!-- import the calendar script -->
+    <script type="text/javascript" src="../calendar.js"></script>
+
+    <!-- import the calendar script -->
+    <script type="text/javascript" src="../calendar-setup.js"></script>
+
+    <!-- import the language module -->
+    <script type="text/javascript" src="../lang/calendar-fa.js"></script>
+
+    <!-- helper script that uses the calendar -->
+    <!-- 
+    <style type="text/css">
+        .calendar {
+            direction: rtl;
+        }
+        
+        #flat_calendar_1,
+        #flat_calendar_2 {
+            width: 200px;
+        }
+        
+        .example {
+            padding: 10px;
+        }
+        
+        .display_area {
+            background-color: #FFFF88
+        }
+    </style> -->
+    <!-- other languages might be available in the lang directory; please check
+		your distribution archive. -->
+</head>
+
+<body>
+    <div class="example">
+        Jalali Date Input :
+        <input id="date_input_1" type="text" /><img id="date_btn_1" src="cal.png" style="vertical-align: top;" />
+        <script type="text/javascript">
+            Calendar.setup({
+                inputField: "date_input_1", // id of the input field
+                button: "date_btn_1", // trigger for the calendar (button ID)
+                ifFormat: "%Y-%m-%d", // format of the input field
+                dateType: 'jalali',
+                weekNumbers: false
+            });
+        </script>
+    </div>
+</body>
+
+</html>
