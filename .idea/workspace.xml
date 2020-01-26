@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc9859a5-ade1-419f-acea-ac238c0dcf79" name="Default" comment="" />
+    <list default="true" id="dc9859a5-ade1-419f-acea-ac238c0dcf79" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +16,29 @@
     <executablePath>composer</executablePath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3102">
+              <caret line="150" column="8" lean-forward="true" selection-start-line="150" selection-start-column="8" selection-end-line="161" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+              <folding>
+                <element signature="e#40#55#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -25,8 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>require</find>
-      <find>today</find>
       <find>logPostDeviceData</find>
       <find>logPostData</find>
       <find>postD</find>
@@ -55,6 +77,8 @@
       <find>log</find>
       <find>logA</find>
       <find>role=&quot;alert&quot;</find>
+      <find>currentStatus</find>
+      <find>cure</find>
     </findStrings>
     <replaceStrings>
       <replace>lg</replace>
@@ -62,6 +86,9 @@
     <dirStrings>
       <dir>C:\Projects\WaterControl\vendor\pusher</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -108,7 +135,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/client/home.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MobileController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Mobile.php" />
@@ -117,6 +143,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/topMenu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/client/changePass.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
       </list>
     </option>
   </component>
@@ -223,11 +250,12 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="877" />
     <option name="width" value="898" />
     <option name="height" value="959" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -239,24 +267,6 @@
             <path>
               <item name="WaterControl" type="b2602c69:ProjectViewProjectNode" />
               <item name="WaterControl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WaterControl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WaterControl" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WaterControl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WaterControl" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WaterControl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WaterControl" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -276,18 +286,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projects\WaterControl\app\Http\Controllers" />
-      <recent name="C:\Projects\WaterControl\resources\views\client" />
-      <recent name="C:\Projects\WaterControl\resources\views\admin" />
-      <recent name="C:\Projects\WaterControl\app\Http\Controllers\Admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projects\WaterControl\resources\views\components" />
       <recent name="C:\Projects\WaterControl\public\js" />
       <recent name="C:\Projects\WaterControl\resources\views\client" />
       <recent name="C:\Projects\WaterControl\public\css" />
       <recent name="C:\Projects\WaterControl\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\WaterControl\app\Http\Controllers" />
+      <recent name="C:\Projects\WaterControl\resources\views\client" />
+      <recent name="C:\Projects\WaterControl\resources\views\admin" />
+      <recent name="C:\Projects\WaterControl\app\Http\Controllers\Admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -389,15 +399,15 @@
       <workItem from="1579582904855" duration="13508000" />
       <workItem from="1579677049368" duration="8097000" />
       <workItem from="1579941848177" duration="11062000" />
-      <workItem from="1580019119465" duration="9759000" />
+      <workItem from="1580019119465" duration="11755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350238000" />
+    <option name="totallyTimeSpent" value="352234000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -408,7 +418,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.22104144" />
       <window_info id="Capture Tool" order="6" />
@@ -688,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="142" column="143" lean-forward="true" selection-start-line="142" selection-start-column="143" selection-end-line="142" selection-end-column="143" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -800,8 +803,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="353">
+          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3102">
+          <caret line="150" column="8" lean-forward="true" selection-start-line="150" selection-start-column="8" selection-end-line="161" selection-end-column="9" />
         </state>
       </provider>
     </entry>

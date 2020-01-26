@@ -135,8 +135,8 @@ class DeviceController extends Controller
             $ac = new AlarmController();
             $alarms = $ac->getAlarms($deviceId);
             $level = $ac->getLevel($deviceId);
-            $maxCreated = DeviceLog::where('device_id', session('deviceId'))->max('created_at');
-            $sendDataDuration = Device::find(session('deviceId'))->level_meter_send_data_duration;
+            $maxCreated = DeviceLog::where('device_id', $deviceId)->max('created_at');
+            $sendDataDuration = Device::find($deviceId)->level_meter_send_data_duration;
             $deviceStatus = strtotime($maxCreated) + $sendDataDuration > time() ? 'روشن' : 'خاموش';
             $lastActive = $maxCreated ? jdate('H:i - Y/m/j', strtotime($maxCreated)) : "";
 
@@ -148,11 +148,13 @@ class DeviceController extends Controller
 
     public function currentStatus($deviceId)
     {
-        $result = json_decode($this->getDeviceData($deviceId));
-        if ($result->status == 1) {
+        $result = $this->getDeviceStatus($deviceId);
+        $result = $result->original;
+
+        if ($result['status'] == 1) {
             $device = Device::find($deviceId);
-            $alarms = json_decode($result->data->alarms);
-            $level = $result->data->level;
+            $alarms = $result['data']['alarms'];
+            $level = $result['data']['level'];
 
             return view('devices.status', compact('device', 'alarms', 'level'));
         } else {
