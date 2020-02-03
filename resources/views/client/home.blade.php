@@ -1,8 +1,7 @@
 @extends('layouts.client', ['title' => 'خانه'])
 @section('content')
 @include('layouts.topMenu', ['routeName' => 'home'])
-<div class="container-index" style="background-image: url('/images/beautiful-drop-water.jpg');">
-
+<div class="container-index2" style="background-image: url('/images/beautiful-drop-water.jpg');">
       
        <div class="container" style="margin-top:50px; direction:rtl;">
         <div class="row">
@@ -16,7 +15,7 @@
         <div class="row">
           <div class="col-sm-6" style="direction: rtl; margin-right:0px">
            <div style="position: relative;  width: 100%; height: 504px; border: 2px solid gray; border-top: none; border-radius: 0 0 5px 5px; display: inline-block; background-image: linear-gradient(to top, #3498db 30%, #c0392b 70%);">
-            <div style="width: 100%; height: {{500-($level*25)}}px; position: absolute; top: 0; right: 0;  background-image: url(/images/beautiful-drop-water.jpg);">
+            <div style="width: 100%; height: {{500-($level*25)}}px; position: absolute; top: 0; right: 0;  background-image: url(/images/beautiful-drop-water.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;">
              <div>
                  <li id="maxValue" class='ruler'></li>
                  <li id="midValue2" class='ruler'></li>

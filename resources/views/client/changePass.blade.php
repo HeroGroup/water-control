@@ -5,7 +5,7 @@
     <div class="col-lg-4 col-md-6 col-sm-7 ">
       <div style="background-color:#a9c6e993 ;margin-top:50px;border-radius: 5px;" >
         <div class="container" style="text-align:right;">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs" style="display: flex;">
           <li class="active" style="margin-left:10px;"><button class="btn1 customBtn active" href="#home" data-toggle="tab">اطلاعات کاربری</button></li>
           <li class="active"><button class="btn1 customBtn" href="#profile" data-toggle="tab">کلمه عبور</button></li>
         </ul>

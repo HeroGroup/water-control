@@ -799,7 +799,7 @@ Calendar.prototype.create = function (_par) {
 		cell.colSpan = cs;
 		cell.className = "button";
 		if (navtype != 0 && Math.abs(navtype) <= 2)
-			cell.className += " nav";
+			cell.className += " nav1";
 		Calendar._add_evs(cell);
 		cell.calendar = cal;
 		cell.navtype = navtype;

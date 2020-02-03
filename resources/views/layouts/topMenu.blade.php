@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="float-right;background-color:#1d1c31;";" dir="rtl">
-    <a class="navbar-brand" href="#" style="font-size:15px;margin-right:0px;font-weight: bold;">سامانه کنترل آب مخزن</a>
+    <a class="navbar-brand" href="#" style="font-size:14px;margin-right:0px;font-weight: bold;">سامانه کنترل آب مخزن</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
