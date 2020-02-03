@@ -1,5 +1,11 @@
 @extends('layouts.admin', ['pageTitle' => 'ویرایش اطلاعات کاربر'])
 @section('content')
+    @if(\Illuminate\Support\Facades\Session::has('message'))
+        @component('components.alert', [
+            'message' => \Illuminate\Support\Facades\Session::get('message'),
+            'type' => \Illuminate\Support\Facades\Session::get('type')])
+        @endcomponent
+    @endif
     <div class="form-horizontal">
         {!! Form::model($user, array('route' => array('users.update', $user), 'method' => 'PUT')) !!}
             @csrf
@@ -33,7 +39,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-4 text-left">
+                <div class="col-sm-offset-2 col-sm-2">
+                    <a href="/admin/users/{{$user->id}}/resetPassword">بازنشانی رمز عبور</a>
+                </div>
+                <div class="col-sm-2 text-left">
                     <a class="btn btn-default" href="{{route('users.index')}}">انصراف</a>
                     <button type="submit" class="btn btn-success">ذخیره</button>
                 </div>

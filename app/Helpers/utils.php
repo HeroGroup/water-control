@@ -76,3 +76,20 @@ function logGetDeviceData(\App\DeviceLog $deviceLog)
     fwrite($myFile, $date.$device.$data);
     fclose($myFile);
 }
+
+function getUserApiToken($userId)
+{
+    $user = \App\User::find($userId);
+    return $userId->api_token;
+}
+
+function setUserApiToken($userId, $fcmToken=null)
+{
+    $api_token = \Illuminate\Support\Str::random(60);
+    $user = \App\User::find($userId);
+    $user->api_token = $api_token;
+    if ($fcmToken) $user->fcm_token = $fcmToken;
+    $user->save();
+
+    return $api_token;
+}

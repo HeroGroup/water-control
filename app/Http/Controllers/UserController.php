@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Hash;
-require_once app_path('Helpers/utils.php');
+// require_once app_path('Helpers/utils.php');
 
 class UserController extends Controller
 {
@@ -231,6 +231,24 @@ class UserController extends Controller
             return redirect(route('users.profile'))->with('message', 'اطلاعات با موفقیت به روزرسانی شد.')->with('type', 'success');
         } catch (\Exception $exception) {
             return redirect(route('users.profile'))->with('message', $exception->getMessage())->with('type', 'danger');
+        }
+    }
+
+    public function resetPassword($userId)
+    {
+        if ($userId) {
+            $user = User::find($userId);
+            if ($user) {
+                $user->password = Hash::make($user->mobile);
+                $user->profile_completed = false;
+                $user->save();
+
+                return redirect(route('users.edit', $userId))->with('message', 'رمز عبور با موفقیت به شماره موبایل کاربر تغییر یافت.')->with('type', 'success');
+            } else {
+                return redirect(route('users.edit', $userId))->with('message', 'کاربر نامعتبر')->with('type', 'success');
+            }
+        } else {
+            return redirect(route('users.edit', $userId))->with('message', 'کاربر نامعتبر')->with('type', 'success');
         }
     }
 }

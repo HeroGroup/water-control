@@ -10,13 +10,19 @@ class Mobile
     public function handle($request, Closure $next)
     {
         try {
-            $token = $request->header('token');
+            $token = $request->header('api_token');
 
             if ($token) {
                 $user = User::where('api_token', 'LIKE', $token);
+                if ($user)
+                    $request->user = $user->first();
+                else
+                    return abort(419);
+            } else {
+                return abort(419);
             }
         } catch (\Exception $exception) {
-            //
+            return abort(419);
         }
 
         return $next($request);

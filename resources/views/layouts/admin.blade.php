@@ -53,7 +53,7 @@
     </div>
 
     <script src="/js/jquery-1.11.0.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.3.1.1.js"></script>
     <script src="/js/metisMenu/metisMenu.min.js"></script>
     <script src="/js/sb-admin-2.js"></script>
     <script src="/js/sweetalert.min.js" type="text/javascript"></script>

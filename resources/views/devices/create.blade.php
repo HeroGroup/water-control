@@ -27,48 +27,49 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="micro_switch_position" class="col-lg-2 control-label">موقعیت مکانی میکروسوییچ</label>
-            <div class="col-lg-8">
-                <div class="row">
-                    <label class="col-lg-3">میکروسوییچ شماره 1</label>
-                    <div class="col-lg-6">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-lg-1 control-label">قطعه</label>
-                                <div class="col-lg-4">
-                                    <select name="part_1" class="form-control">
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                    </select>
-                                </div>
-                                <label class="col-lg-1 control-label">سطح</label>
-                                <div class="col-lg-4">
-                                    {!! Form::selectRange('level_1', 0, 9, null, array('class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="col-lg-3">میکروسوییچ شماره 2</label>
-                    <div class="col-lg-6">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-lg-1 control-label">قطعه</label>
-                                <div class="col-lg-4">
-                                    <select name="part_2" class="form-control">
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                    </select>
-                                </div>
-                                <label class="col-lg-1 control-label">سطح</label>
-                                <div class="col-lg-4">
-                                    {!! Form::selectRange('level_2', 0, 9, null, array('class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <label for="level_meter_micro_switch_position" class="col-lg-2 control-label">موقعیت مکانی میکروسوییچ</label>
+            <div class="col-lg-4">
+                <input type="number" class="form-control" id="level_meter_micro_switch_position" name="level_meter_micro_switch_position">
+                {{--<div class="row">--}}
+                    {{--<label class="col-lg-3">میکروسوییچ شماره 1</label>--}}
+                    {{--<div class="col-lg-6">--}}
+                        {{--<div class="form-horizontal">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label class="col-lg-1 control-label">قطعه</label>--}}
+                                {{--<div class="col-lg-4">--}}
+                                    {{--<select name="part_1" class="form-control">--}}
+                                        {{--<option value="0">0</option>--}}
+                                        {{--<option value="1">1</option>--}}
+                                    {{--</select>--}}
+                                {{--</div>--}}
+                                {{--<label class="col-lg-1 control-label">سطح</label>--}}
+                                {{--<div class="col-lg-4">--}}
+                                    {{--{!! Form::selectRange('level_1', 0, 9, null, array('class' => 'form-control')) !!}--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="row">--}}
+                    {{--<label class="col-lg-3">میکروسوییچ شماره 2</label>--}}
+                    {{--<div class="col-lg-6">--}}
+                        {{--<div class="form-horizontal">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label class="col-lg-1 control-label">قطعه</label>--}}
+                                {{--<div class="col-lg-4">--}}
+                                    {{--<select name="part_2" class="form-control">--}}
+                                        {{--<option value="0">0</option>--}}
+                                        {{--<option value="1">1</option>--}}
+                                    {{--</select>--}}
+                                {{--</div>--}}
+                                {{--<label class="col-lg-1 control-label">سطح</label>--}}
+                                {{--<div class="col-lg-4">--}}
+                                    {{--{!! Form::selectRange('level_2', 0, 9, null, array('class' => 'form-control')) !!}--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
         <div class="form-group">
