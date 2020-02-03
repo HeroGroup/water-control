@@ -20,15 +20,15 @@
                 <form id="tab" action="{{route('client.updateProfile')}}" method="post">
                     @csrf
                 <h4 style="text-align:center;">تغییر اطلاعات کاربری</h4>
-                <hr>
+                <hr style="border:1px solid #1d1c31;">
 
                 <label for="name"><b>نام</b></label>
                 <input type="text" placeholder="لطفا نام خود را وارد نمایید.." name="name" value="{{$user->name}}" required>
-                <hr>
+                <hr style="border:1px solid #1d1c31;">
 
                 <label for="mobile"><b>شماره همراه</b></label>
                 <input type="tel" placeholder="لطفا شماره همراه خود را وارد نمایید.." name="mobile" value="{{$user->mobile}}" required>
-                <hr>
+                <hr style="border:1px solid #1d1c31;">
                 <button type="submit" class="registerbtn customBtn2">ثبت تغییر</button>
               </form>
           </div>
@@ -38,19 +38,19 @@
               @csrf
             <div class="container" style="text-align:right;">
               <h4 style="text-align:center;">تغییر کلمه عبور</h4>
-              <hr>
+              <hr style="border:1px solid #1d1c31;">
 
               <label for="oldPsw"><b>کلمه عبور فعلی</b></label>
               <input type="password" class="active" placeholder="کلمه عبور فعلی را وارد نمایید.." name="oldPsw" required>
-              <hr>
+              <hr style="border:1px solid #1d1c31;">
 
               <label for="newPassword"><b>کلمه عبور جدید</b></label>
               <input type="password" class="active" placeholder="کلمه عبور جدید را وارد نمایید.." name="newPassword" autocomplete="off" required>
-              <hr>
+              <hr style="border:1px solid #1d1c31;">
 
               <label for="confirm_newPassword"><b>تکرار کلمه عبور جدید</b></label>
               <input type="password" class="active" placeholder="تکرار کلمه عبور جدید را وارد نمایید.." name="confirm_newPassword" required>
-              <hr>
+              <hr style="border:1px solid #1d1c31;">
               <button type="submit" class="registerbtn customBtn2">ثبت تغییر</button>
             </div>
           </form>

@@ -3,16 +3,15 @@
 @include('layouts.topMenu', ['routeName' => 'home'])
 <div class="container-index" style="background-image: url('/images/beautiful-drop-water.jpg');">
 
-       <hr/>
+      
        <div class="container" style="margin-top:50px; direction:rtl;">
         <div class="row">
-        <label class="switch col-xs-12">
-           <span class="slider" style="text-align:center;padding:4px;">
-               <b style="margin-top:5px;font-size:18px;">{{$deviceStatus}}</b>
-               <span class="float-left">{{ $lastActive }}</span>
-           </span>
-        </label>
-
+            <div class="switch">
+               <span class="slider" style="text-align:center;padding:4px;height:60px">
+                   <b style="margin-top:5px;font-size:18px;">{{$deviceStatus}}</b>
+               </span>
+                       <span class="card animated fadeInDown float-left " style="text-align:center;font-size:20px;margin-top:30px;height:30px;border-top-left-radius:0px;border-top-right-radius:0px">{{ $lastActive }}</span>
+            </div>
         </div>
         <div class="row">
           <div class="col-sm-6" style="direction: rtl; margin-right:0px">
@@ -39,15 +38,18 @@
             <div class="panel-body">
                 @foreach($alarms as $alarm)
                 <div class="row">
-                    <div class="col-md-2 col-xs-2">
+                    <div class="col-lg-2 col-md-6 col-sm-4" style="display:flex;justify-content: right;width:50px;">
                         <img src="{{asset('images/bell.png')}}" height="30" />
                     </div>
-                    <div class="col-md-7 col-xs-6">
-                        <span>{{$alarm['alarm_message']}}</span>
+                    <div class="col-lg-10 col-md-6 col-sm-8" style="display:flex;justify-content: left;direction:ltr;width:150px;">
+                        <span height="30" style="text-align:right;padding:4px;direction:rtl;font-size: 12px;">{{$alarm['created_at']}}</span>
                     </div>
-                    <div class="col-md-3 col-xs-4 text-right" style="direction: rtl">
-                        <span style="text-align:right;padding:4px;direction:rtl;font-size: 12px;">{{$alarm['created_at']}}</span>
-                    </div>
+                </div>
+             
+                <div class="row">
+                  <div class="col-md-12 col-xs-6" style="display:flex;justify-content: center;">
+                          <span style="text-align:center;direction:rtl;">{{$alarm['alarm_message']}}</span>
+                  </div>
                 </div>
                 <hr>
                 @endforeach
@@ -60,7 +62,10 @@
         </div>
         </div>
     </div>
-</div>
+     
+            
+    
+   </div>
 </div>
     <script>
 
@@ -68,7 +73,6 @@
         document.getElementById('midValue2').innerHTML = '15';
         document.getElementById('midValue1').innerHTML = '10';
         document.getElementById('minValue').innerHTML = '5';
-
 
     </script>
 

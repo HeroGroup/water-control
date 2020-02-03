@@ -3,13 +3,14 @@
 @include('layouts.topMenu', ['routeName' => 'reports'])
 <div class="container-index" style="background-image: url('/images/beautiful-drop-water.jpg');">
         <div class="row" style="margin-top:0px;">
-            <div class="card text-right" style="margin:50px;">
-                <div class="card-header" style="text-align: right;"  dir="rtl">
+            <div class="card text-right" style="margin:50px;justify-content: center;">
+                <div class="card-header" style="text-align: right;font-size:20px;"  dir="rtl">
                   گزارشات
                 </div>
-                 <div class="card-body">
-                     <div class="row container">
-                             <div class="col-sm-4" style="text-align: right;margin:auto;">
+                <div class="card-body">       
+                     <div class="row">
+                        <div class="row container justify-content-center">
+                             <div class="col-sm-4 " style="text-align: right;margin:auto;">
                                   <label style="font-size:15px;">نوع گزارش </label>
                                  <select class="form-control" style="font-size: 14px; height: 40px;margin-top:5px;">
                                   <option value="0">گزارش هشدارها</option>
@@ -17,7 +18,7 @@
                                   <option value="2">گزارش سطح آب در ساعات مختلف یک روز</option>
                                  </select>
                              </div>
-                             <div class="col-sm-2" style="margin:auto;width:100%;">
+                             <div class="col-sm-3" style="width:100%;margin:auto;">
                              <label style="font-size:15px;">از تاریخ:</label>
                              <br>
                                 <div ><input id="date_input_2" style="background-color:#f1f1f1;height:30px;text-align:center;"/><img id="date_btn_2" src="/images/cal.png" style="vertical-align: top;" />
@@ -33,7 +34,7 @@
                                  </script> 
                             </div>
                          
-                          <div class="col-sm-2" style="margin:auto;width:100%;">   
+                          <div class="col-sm-3" style="width:100%;margin:auto;">   
                                 
                              <label style="font-size:15px;">تا تاریخ:</label> 
                              <br>
@@ -49,13 +50,13 @@
                                     });
                                 </script>
                            </div>
-                    
-                            <div class="col-sm-3" style="margin-top:30px;">
-                               <button  class="btn btn-success customBtn2" type="submit" onclick="showReport()" >نمایش گزارش</button>
-                            </div>
-                              
-                         </div>
-                    </div>
+                           
+                             <div style="margin-top:30px;">
+                                 <button style="width:120%;margin:auto;" class="btn btn-success customBtn" type="submit" onclick="showReport()" >نمایش گزارش</button>
+                             </div>
+                        </div>    
+                      </div>
+                 
                     </div>     
         </div>
                         <div id="firstchart" class="row container" >
@@ -67,6 +68,7 @@
                        <div class="row container">
                         <div id="chartSecond" style="min-width: 100% ; height: 400px; margin:10px"></div>
                        </div> 
+    </div>
  </div>
             <script>
                 function showReport() {

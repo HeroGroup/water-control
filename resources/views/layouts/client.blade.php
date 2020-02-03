@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="/css/popup.css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 
+<link rel="stylesheet" href="/css/animate.css">
+
 
 <!-- <link rel="stylesheet" type="text/css" media="all" href="/JalaliJSCalendar-1.4/skins/aqua/theme.css" title="Aqua" /> -->
 <link rel="stylesheet" type="text/css" media="all" href="/JalaliJSCalendar-1.4/skins/calendar-blue.css" title="winter" />
@@ -24,6 +26,7 @@
 <script src="/js/highcharts.js"></script>
 <script src="/js/highcharts-more.js"></script>
 <script src="/js/bootstrap-show-password.min.js"></script>
+<script src="/js/sweetalert.min.js"></script>
 <!-- <script src="/js/exporting.js"></script>
 <script src="/js/export-data.js"></script> -->
   
