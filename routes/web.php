@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('profile', 'UserController@profile')->name('users.profile');
         Route::post('users/changePassword', 'UserController@changePassword')->name('users.changePassword');
         Route::post('users/updateProfile', 'UserController@updateProfile')->name('users.updateProfile');
+        Route::get('users/{userId}/resetPassword', 'UserController@resetPassword')->name('users.resetPassword');
         Route::resource('alarms', 'AlarmController');
     });
 });
@@ -57,10 +58,20 @@ Route::group(['prefix' => 'api'], function() {
     Route::get('/getLevelAlarmConfig/{deviceNum}', 'DeviceController@getLevelAlarmConfig')->name('getLevelAlarmConfig');
     Route::get('/getLevelMeterConfig/{deviceNum}', 'DeviceController@getLevelMeterConfig')->name('getLevelMeterConfig');
 
+    /* =====================    TEMP    ===================== */
+    Route::post('/postBatteryAlarmData', 'TempController@postBatteryAlarmData')->name('postBatteryAlarmData');
+    Route::get('/getBatteryAlarmConfig/{deviceNum}', 'TempController@getBatteryAlarmConfig')->name('getBatteryAlarmConfig');
+    Route::get('/getBatteryAlarmData/{deviceNum}', 'TempController@getBatteryAlarmData')->name('getBatteryAlarmData');
+    /* ====================================================== */
+
     Route::group(['prefix' => 'mobile'], function() {
         Route::post('/login', 'MobileController@login')->name('mobile.login');
-        Route::get('/getCurrentStatus', 'MobileController@getCurrentStatus')->name('mobile.getCurrentStatus');
-        Route::get('/getDeviceSettings', 'MobileController@getDeviceSettings')->name('mobile.getDeviceSettings');
-        Route::post('/updateDeviceSettings', 'MobileController@updateDeviceSettings')->name('mobile.updateDeviceSettings');
+        Route::group(['middleware' => 'Mobile'], function () {
+            Route::post('/updatePassword', 'MobileController@updatePassword')->name('mobile.updatePassword');
+            Route::get('/getCurrentStatus/{device}', 'MobileController@getCurrentStatus')->name('mobile.getCurrentStatus');
+            Route::get('/getDeviceSettings/{device}', 'MobileController@getDeviceSettings')->name('mobile.getDeviceSettings');
+            Route::get('/getDeviceAlarms/{device}', 'MobileController@getDeviceAlarms')->name('mobile.getDeviceAlarms');
+            Route::post('/updateDeviceSettings', 'MobileController@updateDeviceSettings')->name('mobile.updateDeviceSettings');
+        });
     });
 });

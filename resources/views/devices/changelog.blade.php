@@ -7,12 +7,8 @@
     </style>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
-        <li class="active">
-            <a href="#changelog" data-toggle="tab">تغییرات</a>
-        </li>
-        <li>
-            <a href="#users" data-toggle="tab">کاربران</a>
-        </li>
+        <li class="active"><a href="#changelog" data-toggle="tab">تغییرات</a></li>
+        <li><a href="#users" data-toggle="tab">کاربران</a></li>
     </ul>
 
     <!-- Tab panes -->
@@ -48,8 +44,8 @@
                             <td class="text-success">{{$log->user ? $log->user->name : ''}}</td>
                             <td class="text-primary">{{jdate('H:i Y/m/j', strtotime($log->created_at))}}</td>
                         </tr>
-                    </tbody>
                     @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -80,8 +76,8 @@
                             </td>
                             <td>{{$deviceUser->deactivation_date ? jdate('H:i Y/m/j', strtotime($deviceUser->deactivation_date)) : ''}}</td>
                         </tr>
-                    </tbody>
                     @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>

@@ -35,7 +35,8 @@ class DeviceController extends Controller
             'owner' => $request->owner,
             'level_meter_send_data_duration' => $request->level_meter_send_data_duration,
             'level_meter_gather_data_duration' => $request->level_meter_gather_data_duration,
-            'level_meter_micro_switch_position' => $request->part_1.'_'.$request->level_1.'&'.$request->part_2.'_'.$request->level_2,
+            // 'level_meter_micro_switch_position' => $request->part_1.'_'.$request->level_1.'&'.$request->part_2.'_'.$request->level_2,
+            'level_meter_micro_switch_position' => $request->level_meter_micro_switch_position,
             'alarm_panel_receive_data_duration' => $request->alarm_panel_receive_data_duration,
         ]);
 
@@ -94,8 +95,8 @@ class DeviceController extends Controller
     {
         $users = User::where('user_type' ,'LIKE', 'client')->get(['id','mobile','name']);
         $selectedUsers = DeviceUser::where('device_id', '=', $device->id)->pluck('user_id', 'id')->toArray();
+        /*
         $part1 = 0; $level1 = 0; $part2 = 0; $level2 = 0;
-
         if ($device->level_meter_micro_switch_position) {
             $x = explode('&', $device->level_meter_micro_switch_position);
             $y1 = explode('_', $x[0]);
@@ -105,8 +106,8 @@ class DeviceController extends Controller
             $part2 = $y2[0];
             $level2 = $y2[1];
         }
-
-        return view('devices.edit', compact('device', 'users', 'selectedUsers', 'part1', 'level1', 'part2', 'level2'));
+        */
+        return view('devices.edit', compact('device', 'users', 'selectedUsers'));
     }
 
     public function update(Request $request, Device $device)
@@ -116,7 +117,8 @@ class DeviceController extends Controller
             'owner' => $request->owner,
             'level_meter_send_data_duration' => $request->level_meter_send_data_duration,
             'level_meter_gather_data_duration' => $request->level_meter_gather_data_duration,
-            'level_meter_micro_switch_position' => $request->part_1.'_'.$request->level_1.'&'.$request->part_2.'_'.$request->level_2,
+            // 'level_meter_micro_switch_position' => $request->part_1.'_'.$request->level_1.'&'.$request->part_2.'_'.$request->level_2,
+            'level_meter_micro_switch_position' => $request->level_meter_micro_switch_position,
             'alarm_panel_receive_data_duration' => $request->alarm_panel_receive_data_duration,
         ]);
 
@@ -183,6 +185,43 @@ class DeviceController extends Controller
         }
     }
 
+    public function getDeviceSettings($deviceId)
+    {
+        $setting = DeviceSetting::where('device_id', $deviceId)->first();
+        $updated_at = $setting ? jdate('H:i - Y/m/j', strtotime($setting->updated_at)) : "";
+        $level = $setting ? $setting->alarm_level : null;
+        $alarmType = $setting ? explode(",", $setting->alarm_type) : [];
+
+        return ['updated_at' => $updated_at, 'level' => $level, 'alarmType' => $alarmType];
+    }
+
+    public function postDeviceSettings($deviceId, $alarmLevel, $alarmType)
+    {
+        if ($deviceId > 0) {
+            $alarmTypesString = "";
+            if (is_array($alarmType) && count($alarmType) > 0)
+                foreach ($alarmType as $key => $item)
+                    $alarmTypesString .= $key . ",";
+
+            $deviceSetting = DeviceSetting::where('device_id', $deviceId)->first();
+            if ($deviceSetting)
+                $deviceSetting->update([
+                    'alarm_level' => $alarmLevel,
+                    'alarm_type' => $alarmTypesString ? $alarmTypesString : $alarmType
+                ]);
+            else
+                $deviceSetting = new DeviceSetting([
+                    'device_id' => $deviceId,
+                    'alarm_level' => $alarmLevel,
+                    'alarm_type' => $alarmTypesString
+                ]);
+
+            $deviceSetting->save();
+
+            logAction('update_device_settings', $deviceId);
+        }
+    }
+
     // ===========      START API     ===========  //
     public function postDeviceData(Request $request)
     {
@@ -201,7 +240,19 @@ class DeviceController extends Controller
 
                     $log->save();
 
-                    return $this->success('data stored successfully');
+                    $sendNotificationResult = "";
+                    $deviceSetting = DeviceSetting::where('device_id', $device->id);
+                    if ($deviceSetting) {
+                        if (strpos($deviceSetting->alarm_type, 'notification')) {
+                            foreach ($device->users as $deviceUser)
+                                if ($deviceUser->user && $deviceUser->user->fcm_token != null && strlen($deviceUser->user->fcm_token) > 0)
+                                    $sendNotificationResult .= NotificationController::send('دیتا جدید', 'روی این پیام ضربه بزنید', null, $deviceUser->user->fcm_token);
+                        }
+                        if (strpos($deviceSetting->alarm_type, 'sms')) {
+                            // send sms
+                        }
+                    }
+                    return $this->success('data stored successfully. '.$sendNotificationResult);
                 } else {
                     return $this->fail('invalid device');
                 }
@@ -234,7 +285,7 @@ class DeviceController extends Controller
             $device = Device::where('unique_number', 'LIKE', $deviceNum)->first();
             $data = [
                 'receive_data_duration' => $device->alarm_panel_receive_data_duration,
-                'micro_switch_position' => $device->level_meter_micro_switch_position
+                'micro_switch_position' => (int)$device->level_meter_micro_switch_position
             ];
 
             return $this->success('data retrieved successfully', $data);
@@ -262,10 +313,10 @@ class DeviceController extends Controller
     // ===========      START CLIENT     ===========  //
     public function deviceSettings()
     {
-        $setting = DeviceSetting::where('device_id', session('deviceId'))->first();
-        $updated_at = $setting ? jdate('H:i - Y/m/j', strtotime($setting->updated_at)) : "";
-        $level = $setting ? $setting->alarm_level : null;
-        $alarmType = $setting ? explode(",", $setting->alarm_type) : [];
+        $result = $this->getDeviceSettings(session('deviceId'));
+        $updated_at = $result['updated_at'];
+        $level = $result['level'];
+        $alarmType = $result['alarmType'];
 
         return view('client.setting', compact('level', 'updated_at', 'alarmType'));
     }
