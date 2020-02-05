@@ -139,7 +139,7 @@ class DeviceController extends Controller
             $level = $ac->getLevel($deviceId);
             $maxCreated = DeviceLog::where('device_id', $deviceId)->max('created_at');
             $sendDataDuration = Device::find($deviceId)->level_meter_send_data_duration;
-            $deviceStatus = strtotime($maxCreated) + $sendDataDuration > time() ? 'روشن' : 'خاموش';
+            $deviceStatus = strtotime($maxCreated) + ($sendDataDuration*3) > time() ? 'روشن' : 'خاموش';
             $lastActive = $maxCreated ? jdate('H:i - Y/m/j', strtotime($maxCreated)) : "";
 
             return $this->success('success', ['alarms' => $alarms, 'level' => $level, 'status' => $deviceStatus, 'lastActive' => $lastActive]);
@@ -198,22 +198,17 @@ class DeviceController extends Controller
     public function postDeviceSettings($deviceId, $alarmLevel, $alarmType)
     {
         if ($deviceId > 0) {
-            $alarmTypesString = "";
-            if (is_array($alarmType) && count($alarmType) > 0)
-                foreach ($alarmType as $key => $item)
-                    $alarmTypesString .= $key . ",";
-
             $deviceSetting = DeviceSetting::where('device_id', $deviceId)->first();
             if ($deviceSetting)
                 $deviceSetting->update([
                     'alarm_level' => $alarmLevel,
-                    'alarm_type' => $alarmTypesString ? $alarmTypesString : $alarmType
+                    'alarm_type' => $alarmType
                 ]);
             else
                 $deviceSetting = new DeviceSetting([
                     'device_id' => $deviceId,
                     'alarm_level' => $alarmLevel,
-                    'alarm_type' => $alarmTypesString
+                    'alarm_type' => $alarmType
                 ]);
 
             $deviceSetting->save();
@@ -227,8 +222,8 @@ class DeviceController extends Controller
     {
         try {
             $content = $request->getContent();
-            $body = json_decode($content);
             logPostData($content);
+            $body = json_decode($content);
 
             if ($body && isset($body->device_id) && isset($body->data)) {
                 $device = Device::where('unique_number', 'LIKE', $body->device_id)->first();
@@ -240,15 +235,17 @@ class DeviceController extends Controller
 
                     $log->save();
 
+                    $ac = new AlarmController();
                     $sendNotificationResult = "";
+                    $currentLevel = $ac->getLevel($device->id);
                     $deviceSetting = DeviceSetting::where('device_id', $device->id);
-                    if ($deviceSetting) {
-                        if (strpos($deviceSetting->alarm_type, 'notification')) {
+                    if ($deviceSetting && $currentLevel >= $deviceSetting->first()->alarm_level) {
+                        if (strpos($deviceSetting->first()->alarm_type, 'notification')) {
                             foreach ($device->users as $deviceUser)
                                 if ($deviceUser->user && $deviceUser->user->fcm_token != null && strlen($deviceUser->user->fcm_token) > 0)
                                     $sendNotificationResult .= NotificationController::send('دیتا جدید', 'روی این پیام ضربه بزنید', null, $deviceUser->user->fcm_token);
                         }
-                        if (strpos($deviceSetting->alarm_type, 'sms')) {
+                        if (strpos($deviceSetting->first()->alarm_type, 'sms')) {
                             // send sms
                         }
                     }

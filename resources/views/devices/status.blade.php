@@ -39,27 +39,28 @@
         </div>
     </div>
     {{--<script src="https://js.pusher.com/5.0/pusher.min.js"></script>--}}
+    <script src="/js/pusher.min.js" type="text/javascript"></script>
     <script>
 
-        window.Echo.private("deviceLog."+"{{auth()->user()->id}}")
-            .listen('.levelChanged', (e) => {
-                console.log(e);
-                alert("new level reached");
-            });
+        {{--window.Echo.private("deviceLog."+"{{auth()->user()->id}}")--}}
+            {{--.listen('.levelChanged', (e) => {--}}
+                {{--console.log(e);--}}
+                {{--alert("new level reached");--}}
+            {{--});--}}
 
         // Enable pusher logging - don't include this in production
-        {{--Pusher.logToConsole = true;--}}
+        Pusher.logToConsole = true;
 
-        {{--var pusher = new Pusher('4866ed825956a797717f', {--}}
-            {{--cluster: 'ap2',--}}
-            {{--forceTLS: true--}}
-        {{--});--}}
+        var pusher = new Pusher('4866ed825956a797717f', {
+            cluster: 'ap2',
+            forceTLS: true
+        });
 
-        {{--var channel = pusher.subscribe('deviceLog.'+"{{auth()->user()->id}}");--}}
-        {{--channel.bind('.level-changed', function(data) {--}}
-            {{--console.log(JSON.stringify(data));--}}
-            {{--alert("new level reached");--}}
-        {{--});--}}
+        var channel = pusher.subscribe('deviceLog.'+"{{auth()->user()->id}}");
+        channel.bind('.level-changed', function(data) {
+            console.log(JSON.stringify(data));
+            alert("new level reached");
+        });
 
     </script>
 @endsection

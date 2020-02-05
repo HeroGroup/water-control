@@ -107,6 +107,20 @@ class UserController extends Controller
         return view('users.history', compact('user', 'histories'));
     }
 
+    public function sendNotification($userId)
+    {
+        $user = User::find($userId);
+        return view('users.sendNotification', compact('user'));
+    }
+
+    public function postNotification(Request $request)
+    {
+        // validations [title, message, user fcm token]
+        $user = User::find($request->user_id);
+        $result = NotificationController::send($request->title, $request->message, '', $user->fcm_token);
+        return redirect('admin/users')->with('message', $result)->with('type', 'success');
+    }
+
     public function clientLogin(Request $request)
     {
         if (Auth::attempt(['mobile' => $request->mobile, 'password' => $request->password])) {

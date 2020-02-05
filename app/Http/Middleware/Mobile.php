@@ -15,7 +15,7 @@ class Mobile
             if ($token) {
                 $user = User::where('api_token', 'LIKE', $token);
                 if ($user)
-                    $request->user = $user->first();
+                    $request->userId = $user->first()->id;
                 else
                     return abort(419);
             } else {

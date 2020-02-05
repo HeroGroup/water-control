@@ -1,15 +1,5 @@
 @extends('layouts.admin', ['pageTitle' => 'دستگاه ها', 'newButton' => true, 'newButtonUrl' => 'devices/create', 'newButtonText' => 'اضافه کردن دستگاه'])
 @section('content')
-    <style>
-        @media (min-width: 1195px) {
-            .actions-lg { display: block; }
-            .actions-sm { display: none; }
-        }
-        @media (max-width: 1194px) {
-            .actions-lg { display: none; }
-            .actions-sm { display: block; }
-        }
-    </style>
     <div>
         <table class="table table-hover">
             <thead>
@@ -52,7 +42,7 @@
                                 </button>
                                 <ul class="dropdown-menu pull-left" role="menu">
                                     <li>
-                                        <a class="" href="{{route('devices.status', $device->id)}}">
+                                        <a href="{{route('devices.status', $device->id)}}">
                                             <i class="fa fa-fw fa-laptop text-warning"></i> <span class="text-warning">وضعیت دستگاه</span>
                                         </a>
                                     </li>

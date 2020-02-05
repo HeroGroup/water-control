@@ -9,6 +9,8 @@ Route::get('/', function () {
 
 Route::get('completeProfile', function () {return view('client.login2');})->name('client.completeProfile');
 
+Route::post('notifications/send', 'NotificationController@sendApi')->name('notifications.sendApi');
+
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', function () {
         if (auth()->user()) return redirect(route('devices.index'));
@@ -24,6 +26,8 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('devices/{device}/changelog', 'DeviceController@changelog')->name('devices.changelog');
         Route::resource('users', 'UserController');
         Route::get('users/{user}/history', 'UserController@history')->name('users.history');
+        Route::get('users/{user}/sendNotification', 'UserController@sendNotification')->name('users.sendNotification');
+        Route::post('users/notification/send', 'UserController@postNotification')->name('users.notifications.send');
         Route::get('profile', 'UserController@profile')->name('users.profile');
         Route::post('users/changePassword', 'UserController@changePassword')->name('users.changePassword');
         Route::post('users/updateProfile', 'UserController@updateProfile')->name('users.updateProfile');
