@@ -11,7 +11,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class LevelChanged /*implements ShouldBroadcast*/
+class LevelChanged implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -21,15 +21,15 @@ class LevelChanged /*implements ShouldBroadcast*/
     {
         $this->deviceLog = $deviceLog;
     }
-/*
+
     public function broadcastOn()
     {
-        return new PrivateChannel('deviceLog.'.$this->deviceLog->user_id);
+        return new PrivateChannel('deviceLog.'.$this->deviceLog->device_id);
     }
 
     public function broadcastAs()
     {
-        return 'levelChanged';
+        return 'level.changed';
     }
-*/
+
 }

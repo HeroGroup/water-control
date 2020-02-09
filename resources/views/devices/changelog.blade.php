@@ -19,14 +19,14 @@
                     <thead>
                     <tr>
                         <th>ردیف</th>
+                        <th>کاربر تغییر دهنده</th>
+                        <th>زمان تغییر</th>
                         <th>بازه زمانی ارسال دیتا</th>
                         <th>بازه زمانی جمع آوری دیتا</th>
                         <th>موقعیت مکانی میکروسوییچ ها</th>
                         <th>یازه زمانی دریافت دیتا توسط آلارم پنل</th>
                         <th>سطح هشدار</th>
                         <th>نوع هشدار</th>
-                        <th>کاربر تغییر دهنده</th>
-                        <th>زمان تغییر</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -35,14 +35,14 @@
                         <?php $i++ ?>
                         <tr>
                             <td>{{$i}}</td>
+                            <td class="text-success">{{$log->user ? $log->user->name : ''}}</td>
+                            <td class="text-primary">{{jdate('H:i Y/m/j', strtotime($log->created_at))}}</td>
                             <td>{{$log->level_meter_send_data_duration}}</td>
                             <td>{{$log->level_meter_gather_data_duration}}</td>
                             <td style="direction: ltr;">{{$log->level_meter_micro_switch_position}}</td>
                             <td>{{$log->alarm_panel_receive_data_duration}}</td>
                             <td>{{$log->alarm_level}}</td>
                             <td>{{$log->alarm_type}}</td>
-                            <td class="text-success">{{$log->user ? $log->user->name : ''}}</td>
-                            <td class="text-primary">{{jdate('H:i Y/m/j', strtotime($log->created_at))}}</td>
                         </tr>
                     @endforeach
                     </tbody>

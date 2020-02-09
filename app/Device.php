@@ -25,6 +25,11 @@ class Device extends Model
         return $this->hasMany(DeviceUser::class);
     }
 
+    public function activeUsers()
+    {
+        return $this->hasMany(DeviceUser::class)->where('is_active', 1);
+    }
+
     public function userNames()
     {
         $users = $this->users()->where('is_active', 1)->get();

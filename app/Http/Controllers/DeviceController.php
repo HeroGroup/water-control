@@ -176,7 +176,7 @@ class DeviceController extends Controller
     {
         $device = Device::find($deviceId);
         if ($device) {
-            $changelog = DeviceChangelog::where('device_id', $deviceId)->get();
+            $changelog = DeviceChangelog::where('device_id', $deviceId)->orderBy('id', 'desc')->get();
             $deviceUsers = DeviceUser::where('device_id', $deviceId)->get();
 
             return view('devices.changelog', compact('device', 'changelog', 'deviceUsers'));
@@ -235,17 +235,22 @@ class DeviceController extends Controller
 
                     $log->save();
 
+                    /*=============================*/
+                    $chat = new ChatController();
+                    $chat->broadcast(json_encode($log->toArray()), $chat->getClients());
+                    /*=============================*/
+
                     $ac = new AlarmController();
                     $sendNotificationResult = "";
                     $currentLevel = $ac->getLevel($device->id);
                     $deviceSetting = DeviceSetting::where('device_id', $device->id);
                     if ($deviceSetting && $currentLevel >= $deviceSetting->first()->alarm_level) {
-                        if (strpos($deviceSetting->first()->alarm_type, 'notification')) {
-                            foreach ($device->users as $deviceUser)
+                        if (strpos($deviceSetting->first()->alarm_type, 'notification') >= 0) {
+                            foreach ($device->activeUsers as $deviceUser)
                                 if ($deviceUser->user && $deviceUser->user->fcm_token != null && strlen($deviceUser->user->fcm_token) > 0)
-                                    $sendNotificationResult .= NotificationController::send('دیتا جدید', 'روی این پیام ضربه بزنید', null, $deviceUser->user->fcm_token);
+                                    $sendNotificationResult .= NotificationController::send('اخطار', 'آب بالاتر از سطح اخطار آمده است.', null, $deviceUser->user->fcm_token);
                         }
-                        if (strpos($deviceSetting->first()->alarm_type, 'sms')) {
+                        if (strpos($deviceSetting->first()->alarm_type, 'sms') >= 0) {
                             // send sms
                         }
                     }

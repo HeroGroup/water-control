@@ -15,6 +15,7 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
-Broadcast::channel('deviceLog.{userId}', function ($user, $userId) {
-    return $user->id === $userId;
+Broadcast::channel('deviceLog.{deviceId}', function ($user, $deviceId) {
+    $check = \App\DeviceUser::where('device_id', $deviceId)->where('user_id', $user->id)->where('is_active', 1)->count;
+    return $check > 0 ? true : false;
 });

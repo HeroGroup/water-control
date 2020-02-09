@@ -39,16 +39,27 @@
         </div>
     </div>
     {{--<script src="https://js.pusher.com/5.0/pusher.min.js"></script>--}}
-    <script src="/js/pusher.min.js" type="text/javascript"></script>
+    <!--<script src="/js/pusher.min.js" type="text/javascript"></script>-->
     <script>
+        var conn = new WebSocket('ws://localhost:8080');
+        conn.onopen = function(e) {
+            console.log("Connection established!");
+        };
 
-        {{--window.Echo.private("deviceLog."+"{{auth()->user()->id}}")--}}
-            {{--.listen('.levelChanged', (e) => {--}}
+        conn.onmessage = function(e) {
+            let receivedData = JSON.parse(e.data);
+            console.log(receivedData);
+        };
+
+        {{--Echo.private("deviceLog."+"{{$device->id}}")--}}
+            {{--.listen('.level.changed', (e) => {--}}
                 {{--console.log(e);--}}
                 {{--alert("new level reached");--}}
             {{--});--}}
 
+
         // Enable pusher logging - don't include this in production
+        /*
         Pusher.logToConsole = true;
 
         var pusher = new Pusher('4866ed825956a797717f', {
@@ -56,11 +67,11 @@
             forceTLS: true
         });
 
-        var channel = pusher.subscribe('deviceLog.'+"{{auth()->user()->id}}");
-        channel.bind('.level-changed', function(data) {
-            console.log(JSON.stringify(data));
+        var channel = pusher.subscribe('deviceLog.'+"{{$device->id}}");
+        channel.bind('.level.changed', function(data) {
+            console.log("received data:", JSON.stringify(data));
             alert("new level reached");
         });
-
+        */
     </script>
 @endsection
