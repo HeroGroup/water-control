@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Device;
-use App\DeviceAlarm;
 use App\DeviceChangelog;
 use App\DeviceLog;
 use App\DeviceSetting;
 use App\DeviceUser;
-use App\Events\LevelChanged;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
@@ -234,11 +232,6 @@ class DeviceController extends Controller
                     ]);
 
                     $log->save();
-
-                    /*=============================*/
-                    $chat = new ChatController();
-                    $chat->broadcast(json_encode($log->toArray()), $chat->getClients());
-                    /*=============================*/
 
                     $ac = new AlarmController();
                     $sendNotificationResult = "";

@@ -2,6 +2,15 @@
 
 Auth::routes(['register' => false]);
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+Route::get('test/{user?}', function ($user='Guest') {
+    event(new App\Events\StatusLiked($user));
+    return "Event has been sent!";
+});
+
 Route::get('/', function () {
     if (auth()->user()) { return  auth()->user()->user_type == "client" ? redirect(route('client.home')) : redirect(route('devices.index')); }
     else return view('client.login');

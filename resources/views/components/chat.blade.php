@@ -12,15 +12,15 @@
         border-color: #317395;
     }
 </style>
-<div id="chat-box" style="overflow-y: scroll; overflow-x: hidden; height: 500px; margin: 15px; border: #8a8a8a solid 1px; border-radius: 5px;">
+<div id="chat-box" style="overflow-y: scroll; overflow-x: hidden; height: 500px; margin: 15px; border: #cccccc solid 1px; border-radius: 5px;">
     <ul id="messages" style="list-style: none;"></ul>
 </div>
-<div class="row">
+<div class="row" style="margin-bottom: 10px;">
     <div class="col-lg-12">
-        <div class="col-sm-8">
+        <div class="col-xs-8">
             <input type="text" class="form-control" name="message-text" id="message-text" />
         </div>
-        <div class="col-sm-4">
+        <div class="col-xs-4">
             <button type="button" onclick="sendMessage()" class="btn btn-circle btn-primary"><i class="fa fa-fw fa-arrow-left" style="font-size: 16px;"></i></button>
         </div>
     </div>

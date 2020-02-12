@@ -15,6 +15,7 @@ class ChatController implements MessageComponentInterface {
     public function onOpen(ConnectionInterface $conn) {
         // Store the new connection to send messages to later
         $this->clients->attach($conn);
+        dump($conn);
 
         echo "New connection! ({$conn->resourceId})\n";
     }
