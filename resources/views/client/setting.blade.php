@@ -24,7 +24,6 @@
                     <div class="form-group row" dir="rtl" >
                         <label for="mode" class="col-sm-6 col-form-label">نوع آلارم</label>
                         <div class="col-sm-4" style="padding-top: 8px;">
-.
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" name="alarmType[sms]" @if(in_array("sms", $alarmType)) checked @endif class="custom-control-input" id="defaultUnchecked1">
                                 <label class="custom-control-label" for="defaultUnchecked1">پیامک</label>
