@@ -47,26 +47,29 @@ class MobileController extends Controller
 
     public function updatePassword(Request $request)
     {
-        dd($request->user);
-        $user = User::find($request->user->id);
-        if ($request->has('current_password'))
-            if (Hash::check($request->current_password, $user->password))
-                return $this->fail('رمز عبور فعلی نادرست است.');
+        try {
+            $user = User::find($request->userId);
+            if ($request->has('current_password'))
+                if (Hash::check($request->current_password, $user->password))
+                    return $this->fail('رمز عبور فعلی نادرست است.');
 
-        if ($request->has('password') && $request->has('password_confirmation')) {
-            if ($request->password == $request->password_confirmation) {
-                $user = $request->user;
-                $user->password = Hash::make($request->password);
-                $user->profile_completed = true;
-                $api_token = setUserApiToken($user->id);
-                $user->save();
+            if ($request->has('password') && $request->has('password_confirmation')) {
+                if ($request->password == $request->password_confirmation) {
+                    $user->password = Hash::make($request->password);
+                    $user->profile_completed = true;
+                    $api_token = setUserApiToken($user->id);
+                    $user->save();
 
-                return $this->success('رمز عبور با موفقیت بروزرسانی شد.', ['api_token' => $api_token]);
+                    $data = ['api_token' => $api_token];
+                    return $this->success('رمز عبور با موفقیت بروزرسانی شد.', $data);
+                } else {
+                    return $this->fail('رمز عبور و تکرار آن همخوانی ندارند.');
+                }
             } else {
-                return $this->fail('رمز عبور و تکرار آن همخوانی ندارند.');
+                return $this->fail('خطا در پارامتر های ارسالی.');
             }
-        } else {
-            return $this->fail('خطا در پارامتر های ارسالی.');
+        } catch (\Exception $exception) {
+            return $this->fail($exception->getMessage());
         }
     }
 

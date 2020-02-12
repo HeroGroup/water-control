@@ -14,7 +14,7 @@
     <link href="/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="/css/rtl/sb-admin-2.css" rel="stylesheet">
     <link href="/css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/my.css" rel="stylesheet" type="text/css"><link href="{{public_path('css/rtl/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="/css/my.css" rel="stylesheet" type="text/css">
 
     {{--<link href="{{public_path('css/rtl/bootstrap.min.css')}}" rel="stylesheet">--}}
     {{--<link href="{{public_path('css/rtl/bootstrap.rtl.css')}}" rel="stylesheet">--}}

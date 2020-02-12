@@ -95,13 +95,11 @@ class AlarmController extends Controller
             $part1IsCorrupted = false;
             $part2IsCorrupted = false;
 
-            if (current($part1) == -1 && end($part1) == -1 && count(array_unique($part1)) == 1) { // all values are -1
-                // device is not sending any data
+            if (current($part1) == -1 && end($part1) == -1 && count(array_unique($part1)) == 1) { // all values are -1 // device is not sending any data
                 $part1IsCorrupted = true;
             }
 
-            if (current($part2) == -1 && end($part2) == -1 && count(array_unique($part2)) == 1) { // all values are -1
-                // device is not sending any data
+            if (current($part2) == -1 && end($part2) == -1 && count(array_unique($part2)) == 1) { // all values are -1 // device is not sending any data
                 $part2IsCorrupted = true;
             }
 

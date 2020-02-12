@@ -24,5 +24,6 @@ class VerifyCsrfToken extends Middleware
         'api/mobile/login',
         'api/mobile/updatePassword',
         'api/mobile/updateDeviceSettings',
+        'notifications/send'
     ];
 }

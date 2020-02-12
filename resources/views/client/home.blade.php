@@ -2,7 +2,7 @@
 @section('content')
 @include('layouts.topMenu', ['routeName' => 'home'])
 <div class="container-index2" style="background-image: url('/images/beautiful-drop-water.jpg');">
-      
+
        <div class="container" style="margin-top:50px; direction:rtl;">
         <div class="row">
             <div class="switch">
@@ -44,7 +44,7 @@
                         <span height="30" style="text-align:right;padding:4px;direction:rtl;font-size: 12px;">{{$alarm['created_at']}}</span>
                     </div>
                 </div>
-             
+
                 <div class="row">
                   <div class="col-md-12 col-xs-6" style="display:flex;justify-content: center;">
                           <span style="text-align:center;direction:rtl;">{{$alarm['alarm_message']}}</span>
@@ -61,9 +61,9 @@
         </div>
         </div>
     </div>
-     
-            
-    
+
+
+
    </div>
 </div>
     <script>
@@ -73,6 +73,21 @@
         document.getElementById('midValue1').innerHTML = '10';
         document.getElementById('minValue').innerHTML = '5';
 
+    </script>
+    <script src="//js.pusher.com/3.1/pusher.min.js"></script>
+    <script>
+        var pusher = new Pusher('bd1d5d92cd0fc2db2711', {
+            encrypted: true,
+            cluster: 'ap2'
+        });
+
+        var channel = pusher.subscribe('level-changed');
+
+        channel.bind('App\\Events\\LevelChanged', function(data) {
+            if (data.deviceLog.device_id.toString() === "{{$device->id}}") {
+                // your code goes here
+            }
+        });
     </script>
 
 @endsection
