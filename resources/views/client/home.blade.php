@@ -84,9 +84,7 @@
         var channel = pusher.subscribe('level-changed');
 
         channel.bind('App\\Events\\LevelChanged', function(data) {
-            if (data.deviceLog.device_id.toString() === "{{$device->id}}") {
-                // your code goes here
-            }
+            // your code goes here
         });
     </script>
 
