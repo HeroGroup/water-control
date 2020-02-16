@@ -31,7 +31,7 @@
                 <hr style="border:1px solid #1d1c31;">
                 <button type="submit" class="registerbtn customBtn2">ثبت تغییر</button>
               </form>
-          </div>
+            </div>
           </div>
        <div class="tab-pane fade" id="profile">
           <form id="tab2" action="{{route('client.updatePassword')}}" method="post">
