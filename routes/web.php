@@ -2,15 +2,6 @@
 
 Auth::routes(['register' => false]);
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-Route::get('test/{user?}', function ($user='Guest') {
-    event(new App\Events\StatusLiked($user));
-    return "Event has been sent!";
-});
-
 Route::get('/', function () {
     if (auth()->user()) { return  auth()->user()->user_type == "client" ? redirect(route('client.home')) : redirect(route('devices.index')); }
     else return view('client.login');
@@ -81,6 +72,7 @@ Route::group(['prefix' => 'api'], function() {
         Route::post('/login', 'MobileController@login')->name('mobile.login');
         Route::group(['middleware' => 'Mobile'], function () {
             Route::post('/updatePassword', 'MobileController@updatePassword')->name('mobile.updatePassword');
+            Route::post('/updateProfile', 'MobileController@updateProfile')->name('mobile.updateProfile');
             Route::get('/getCurrentStatus/{device}', 'MobileController@getCurrentStatus')->name('mobile.getCurrentStatus');
             Route::get('/getDeviceSettings/{device}', 'MobileController@getDeviceSettings')->name('mobile.getDeviceSettings');
             Route::get('/getDeviceAlarms/{device}', 'MobileController@getDeviceAlarms')->name('mobile.getDeviceAlarms');

@@ -29,7 +29,7 @@
 <script src="/js/sweetalert.min.js"></script>
 <!-- <script src="/js/exporting.js"></script>
 <script src="/js/export-data.js"></script> -->
-  
+
 <script src="/js/jalali.js"></script>
 <script src="/js/calendar.js"></script>
 <script src="/js/calendar-setup.js"></script>
@@ -65,24 +65,24 @@
   background-color:#a9c6e995;
   color: black;
 }
-</style>	
+</style>
 
 </head>
 
 
 <body dir="rtl">
   @yield('content')
-  
+
   <script src="/js/jquery-3.4.1.slim.min.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/popper.min.js "></script>
   <script src="/js/bootstrap.min.js"></script>
-  
+
     <script>
     $(".navbar-toggle").click(function(){
     $(".navbar").slideToggle();
       });
     </script>
- 
+
 
 </body>

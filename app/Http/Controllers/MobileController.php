@@ -29,6 +29,7 @@ class MobileController extends Controller
                 $userData = [
                     'username' => $user->name,
                     'mobile' => $user->mobile,
+                    'email' => $user->email,
                     'api_token' => $api_token,
                     'profile_completed' => $user->profile_completed,
                 ];
@@ -70,6 +71,20 @@ class MobileController extends Controller
             }
         } catch (\Exception $exception) {
             return $this->fail($exception->getMessage());
+        }
+    }
+
+    public function updateProfile(Request $request)
+    {
+        try {
+            $userControl = new UserController();
+            $userControl->updateProfileGeneral($request->name, $request->email, $request->mobile);
+
+            return $this->success('اطلاعات کاربری با موفقیت بروزرسانی شد.');
+        } catch (\Exception $exception) {
+            // $message = $exception->getFile() . ' line: ' . $exception->getLine() . '. '. $exception->getMessage();
+            $message = $this->SERVER_ERROR;
+            return $this->fail($message);
         }
     }
 

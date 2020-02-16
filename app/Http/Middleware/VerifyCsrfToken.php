@@ -23,6 +23,7 @@ class VerifyCsrfToken extends Middleware
         'api/postBatteryAlarmData',
         'api/mobile/login',
         'api/mobile/updatePassword',
+        'api/mobile/updateProfile',
         'api/mobile/updateDeviceSettings',
         'notifications/send'
     ];

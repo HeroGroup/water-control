@@ -16,9 +16,9 @@ class NotifyClients
     {
         $alarmController = new AlarmController();
 
-        $alarmController->clearAlarms($event->deviceLog->device_id, $event->deviceLog->input_data);
+        $alarmController->clearAlarms($event->deviceId, $event->inputData);
 
-        $alarmController->generateAlarms($event->deviceLog->device_id, $event->deviceLog->input_data);
+        $alarmController->generateAlarms($event->deviceId, $event->inputData);
 
         // logPostDeviceData($event->deviceLog);
     }

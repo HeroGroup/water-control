@@ -50,7 +50,7 @@
         var channel = pusher.subscribe('level-changed');
 
         channel.bind('App\\Events\\LevelChanged', function(data) {
-            if (data.deviceLog.device_id.toString() === "{{$device->id}}") {
+            if (data.deviceId.toString() === "{{$device->id}}") {
                 $("#empty-area").animate({height: 500-(data.level*25)+'px'}, 500);
                 $("#full-area").animate({height: (data.level*25)+'px'}, 500);
                 $("#level-number").text(data.level);

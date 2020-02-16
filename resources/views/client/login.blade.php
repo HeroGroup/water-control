@@ -1,6 +1,54 @@
 @extends('layouts.client', ['title' => 'خوش آمدید'])
 @section('content')
+    <style>
+        .menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 54px;
+            background-color: #1d1c31;
+            text-align: right;
+            display: flex;
+            align-items: center;
+        }
+        .custom-button {
+            margin: 0 10px 0 0;
+            border-radius: 3px;
+            padding: 5px 10px;
+            border-width: 2px;
+            border-style: solid;
+        }
+        .custom-button:hover {
+            color: #0e0e0e;
+        }
+        .yellow-button {
+            border-color: #ffcc00;
+            color: #ffcc00;
+        }
+        .yellow-button:hover {
+            background-color: #ffcc00;
+        }
+        .blue-button {
+            border-color: #007bff;
+            color: #007bff;
+        }
+        .blue-button:hover {
+            background-color: #007bff;
+        }
+        .green-button {
+            border-color: #28a745;
+            color: #28a745;
+        }
+        .green-button:hover {
+            background-color: #28a745;
+        }
+    </style>
     <div class="container-login100" style="background-image: url('/images/drops.jpg');">
+        <div class="menu">
+            <a class="custom-button yellow-button" href="/downloads/water-control.apk">دانلود اپلیکیشن</a>
+            <a class="custom-button blue-button" href="/admin">ورود مدیر</a>
+        </div>
         <div class="wrap-login100 p-t-30 p-b-50">
             <h4>
                 <span class="login100-form-title p-b-41 "> خوش آمدید </span>
@@ -27,9 +75,6 @@
                     <button type="submit" class="button login100-form-btn">ورود</button>
                 </div>
             </form>
-            <div style="position: relative;">
-                <a class="text-primary" style="position: absolute; bottom: 1em; left: 1em;" href="/admin">ورود مدیر</a>
-            </div>
         </div>
     </div>
 @endsection
