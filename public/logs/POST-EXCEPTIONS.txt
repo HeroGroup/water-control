@@ -1,7 +1,0 @@
-
-[۱۳۹۸/۱۰/۲۵ ۱۵:۲۴] [exception message=Trying to get property 'unique_number' of non-object]
-[۱۳۹۸/۱۰/۲۵ ۱۵:۲۵] [exception message=Object of class stdClass could not be converted to string]
-[۱۳۹۸/۱۰/۲۵ ۱۵:۲۸] [exception message= C:\Projects\WaterControl\app\Helpers\utils.php: line 29 - Object of class stdClass could not be converted to string]
-[۱۳۹۸/۱۰/۲۸ ۱۲:۱۸] [exception message= C:\Projects\WaterControl\app\Helpers\utils.php: line 28 - fopen(logs/2020/01/18/30000001-POST-REQUEST.txt): failed to open stream: No such file or directory]
-[۱۳۹۸/۱۰/۲۸ ۱۲:۲۱] [exception message= C:\Projects\WaterControl\app\Http\Controllers\AlarmController.php: line 157 - Undefined offset: 19]
-[۱۳۹۸/۱۰/۲۸ ۱۲:۲۷] [exception message= C:\Projects\WaterControl\app\Http\Controllers\AlarmController.php: line 157 - Undefined offset: 19]

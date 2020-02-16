@@ -1,2 +1,0 @@
-
-[۱۳۹۸/۱۱/۱ ۱۲:۳۱] [exception message= C:\Projects\WaterControl\app\Http\Controllers\AlarmController.php: line 217 - Undefined variable: data]
