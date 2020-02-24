@@ -11,7 +11,7 @@ class DeviceLog extends Model
         'saved' => LevelChanged::class,
     ];
 
-    protected $fillable = ['device_id', 'input_data'];
+    protected $fillable = ['device_id', 'input_data', 'level'];
 
     public function device()
     {

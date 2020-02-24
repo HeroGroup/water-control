@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc9859a5-ade1-419f-acea-ac238c0dcf79" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/users/sendNotification.blade.php" afterDir="false" />
+    <list default="true" id="dc9859a5-ade1-419f-acea-ac238c0dcf79" name="Default" comment="developing websockets">
+      <change beforePath="$PROJECT_DIR$/.idea/WaterControl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WaterControl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlarmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlarmController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DeviceLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DeviceLog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MobileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MobileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Mobile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Mobile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/my.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/my.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/devices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/devices/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pusher.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pusher.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/reports.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/reports.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/devices/status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/devices/status.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,12 +25,33 @@
     <executablePath>composer</executablePath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ReportController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4642">
-              <caret line="220" column="4" selection-start-line="220" selection-start-column="4" selection-end-line="220" selection-end-column="4" />
+            <state relative-caret-position="431">
+              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+              <folding>
+                <element signature="e#40#60#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reports.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/client/reports.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="78" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1100">
+              <caret line="50" column="76" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -51,36 +67,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logA</find>
-      <find>role=&quot;alert&quot;</find>
-      <find>currentStatus</find>
-      <find>cure</find>
-      <find>logAction('update_device_settings'</find>
-      <find>update_device_settings</find>
-      <find>logAction('login</find>
-      <find>changelog</find>
-      <find>level_meter_micro_switch_position</find>
-      <find>getLevelAlarmConfig</find>
-      <find>Session::get</find>
-      <find>t</find>
-      <find>reset-password</find>
-      <find>getDeviceSettings</find>
-      <find>login</find>
-      <find>postDeviceDa</find>
-      <find>Page Expired</find>
-      <find>getLevel</find>
-      <find>index</find>
-      <find>history</find>
-      <find>with</find>
-      <find>postDeviceSettings</find>
-      <find>updateDeviceSettings</find>
-      <find>خاموش</find>
-      <find>$this-&gt;success</find>
-      <find>$request-&gt;user</find>
-      <find>send</find>
-      <find>updatePass</find>
       <find>logException</find>
       <find>alarm_type</find>
+      <find>Echo</find>
+      <find>echo</find>
+      <find>window</find>
+      <find>window.echo</find>
+      <find>new DeviceChangelog</find>
+      <find>DeviceChangelog</find>
+      <find>$deviceSetting-&gt;update</find>
+      <find>alert alert</find>
+      <find>NotifyClient</find>
+      <find>LevelChanged</find>
+      <find>postDeviceData</find>
+      <find>welcome</find>
+      <find>curl</find>
+      <find>log</find>
+      <find>pusher</find>
+      <find>socket</find>
+      <find>statuslike</find>
+      <find>updateProfile</find>
+      <find>bottom</find>
+      <find>status</find>
+      <find>home</find>
+      <find>getLevel</find>
+      <find>postDeviceDa</find>
+      <find>level</find>
+      <find>$ac</find>
+      <find>&quot;&quot;</find>
+      <find>date_input_1</find>
+      <find>device</find>
     </findStrings>
     <replaceStrings>
       <replace>lg</replace>
@@ -95,57 +111,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/enums.php" />
-        <option value="$PROJECT_DIR$/resources/views/users/history.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
-        <option value="$PROJECT_DIR$/app/Events/OrderShipped.php" />
-        <option value="$PROJECT_DIR$/config/broadcasting.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/app/DeviceLog.php" />
-        <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/DeviceChangelog.php" />
-        <option value="$PROJECT_DIR$/app/DeviceSetting.php" />
-        <option value="$PROJECT_DIR$/app/Events/DeviceSettingCreatedOrUpdated.php" />
-        <option value="$PROJECT_DIR$/app/Events/DeviceCreatedOrUpdated.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_01_15_090950_create_device_changelog_table.php" />
-        <option value="$PROJECT_DIR$/app/Listeners/CreateDeviceChangeLog.php" />
-        <option value="$PROJECT_DIR$/app/Listeners/CreateDeviceSettingChangeLog.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_01_15_090950_create_device_changelogs_table.php" />
-        <option value="$PROJECT_DIR$/app/Device.php" />
-        <option value="$PROJECT_DIR$/app/Events/LevelChanged.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/app/Listeners/NotifyClients.php" />
-        <option value="$PROJECT_DIR$/resources/views/devices/showRawData.blade.php" />
-        <option value="$PROJECT_DIR$/app/DeviceAlarm.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/client/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/topMenu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/client/changePass.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/devices/changelog.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TempController.php" />
         <option value="$PROJECT_DIR$/resources/views/devices/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/devices/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Helpers/utils.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/public/css/my.css" />
         <option value="$PROJECT_DIR$/resources/views/devices/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/users/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Mobile.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MobileController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AlarmController.php" />
         <option value="$PROJECT_DIR$/resources/views/users/sendNotification.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/devices/status.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" />
+        <option value="$PROJECT_DIR$/app/DeviceUser.php" />
+        <option value="$PROJECT_DIR$/app/Device.php" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/routes/channels.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/devices/changelog.blade.php" />
+        <option value="$PROJECT_DIR$/app/Events/DeviceSettingCreatedOrUpdated.php" />
+        <option value="$PROJECT_DIR$/bin/chat-server.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/home.blade.php" />
+        <option value="$PROJECT_DIR$/start-chat-server.bat" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/logs/2020-02-09/CONNECTIONS.txt" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/utils.php" />
+        <option value="$PROJECT_DIR$/resources/views/components/chat.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
+        <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/config/broadcasting.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/.env.example" />
+        <option value="$PROJECT_DIR$/app/Events/LevelChanged.php" />
+        <option value="$PROJECT_DIR$/app/Listeners/NotifyClients.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MobileController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/client.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/client/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/client/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/devices/status.blade.php" />
+        <option value="$PROJECT_DIR$/app/DeviceLog.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/client/reports.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" />
       </list>
     </option>
   </component>
@@ -250,6 +266,19 @@
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
       <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
       <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/cboden/ratchet" />
+      <path value="$PROJECT_DIR$/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -264,7 +293,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -273,28 +301,11 @@
               <item name="WaterControl" type="b2602c69:ProjectViewProjectNode" />
               <item name="WaterControl" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="WaterControl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WaterControl" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WaterControl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WaterControl" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WaterControl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WaterControl" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,18 +317,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Projects\WaterControl\resources\views\components" />
-      <recent name="C:\Projects\WaterControl\public\js" />
-      <recent name="C:\Projects\WaterControl\resources\views\client" />
-      <recent name="C:\Projects\WaterControl\public\css" />
-      <recent name="C:\Projects\WaterControl\public\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\WaterControl\app\Http\Controllers" />
       <recent name="C:\Projects\WaterControl\resources\views\client" />
       <recent name="C:\Projects\WaterControl\resources\views\admin" />
       <recent name="C:\Projects\WaterControl\app\Http\Controllers\Admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\WaterControl\public\files" />
+      <recent name="C:\Projects\WaterControl\app\Listeners" />
+      <recent name="C:\Projects\WaterControl\app\Events" />
+      <recent name="C:\Projects\WaterControl\resources\views\components" />
+      <recent name="C:\Projects\WaterControl\public\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -426,38 +437,93 @@
       <workItem from="1580619345314" duration="14386000" />
       <workItem from="1580709141337" duration="15240000" />
       <workItem from="1580791231587" duration="14535000" />
-      <workItem from="1580880793772" duration="242000" />
+      <workItem from="1580880793772" duration="13500000" />
+      <workItem from="1581137723399" duration="19790000" />
+      <workItem from="1581227559607" duration="8202000" />
+      <workItem from="1581314726498" duration="10083000" />
+      <workItem from="1581327237105" duration="5558000" />
+      <workItem from="1581338355799" duration="203000" />
+      <workItem from="1581482687111" duration="11224000" />
+      <workItem from="1581749342058" duration="8502000" />
+      <workItem from="1581829792715" duration="16000000" />
+      <workItem from="1581856077447" duration="53000" />
+      <workItem from="1581916033987" duration="12519000" />
+      <workItem from="1582002257075" duration="8648000" />
+      <workItem from="1582347864183" duration="682000" />
+      <workItem from="1582435343750" duration="10000" />
     </task>
+    <task id="LOCAL-00001" summary="developing websockets">
+      <created>1581247503479</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581247503479</updated>
+    </task>
+    <task id="LOCAL-00002" summary="developing websockets">
+      <created>1581488773582</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581488773582</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add websocket to client home">
+      <created>1581488918122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581488918122</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add features to mobile app">
+      <created>1581839399437</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581839399437</updated>
+    </task>
+    <task id="LOCAL-00005" summary="remove logs">
+      <created>1581839525856</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581839525856</updated>
+    </task>
+    <task id="LOCAL-00006" summary="remove bug">
+      <created>1581839756165</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581839756165</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="425565000" />
+    <option name="totallyTimeSpent" value="540297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005208" side_tool="true" weight="0.24335814" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.17853348" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.22104144" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.23910733" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49947917" weight="0.20510095" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16979167" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.159375" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -469,348 +535,324 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="developing websockets" />
+    <MESSAGE value="add websocket to client home" />
+    <MESSAGE value="add features to mobile app" />
+    <MESSAGE value="remove logs" />
+    <MESSAGE value="remove bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove bug" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/client/login2.blade.php">
+    <entry file="file://$PROJECT_DIR$/logs/2020-02-09/CONNECTIONS.txt" />
+    <entry file="file://$PROJECT_DIR$/app/Helpers/utils.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        <state relative-caret-position="386">
+          <caret line="77" column="1" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/topMenu.blade.php">
+    <entry file="file://$PROJECT_DIR$/start-chat-server.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/client/changePass.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/components/chat.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="88">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DeviceChangelog.php">
+    <entry file="file://$PROJECT_DIR$/bin/chat-server.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="308">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/DeviceSettingCreatedOrUpdated.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="343">
+          <caret line="30" column="70" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Listeners/CreateDeviceChangeLog.php">
+    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="828">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Listeners/CreateDeviceSettingChangeLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="56" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/DeviceCreatedOrUpdated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+    <entry file="file://$PROJECT_DIR$/routes/channels.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+        <state relative-caret-position="264">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+        <state relative-caret-position="253">
+          <caret line="22" column="10" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+    <entry file="file://$PROJECT_DIR$/app/Events/DeviceCreatedOrUpdated.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/enums.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/bootstraprtl.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/devices/changelog.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+        <state relative-caret-position="-823" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Broadcasting/ShouldBroadcast.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/InteractsWithSockets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-186">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-670">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/pusher/pusher-php-server/src/PusherInstance.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/pusher/pusher-php-server/src/Pusher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="337" column="15" selection-start-line="337" selection-start-column="11" selection-end-line="337" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/fa48fed87a050aa5c06b43016e5b9bebc94fb1ab.php" />
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-02-08.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-02-10.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="548" lean-forward="true" selection-start-line="548" selection-end-line="548" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/broadcasting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-02-12.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="89" column="18" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php" />
+    <entry file="file://$PROJECT_DIR$/.env.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-762" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TempController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/devices/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/devices/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/topBar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="109" column="64" lean-forward="true" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="64" column="55" lean-forward="true" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
-          <caret line="18" column="105" lean-forward="true" selection-start-line="18" selection-start-column="105" selection-end-line="18" selection-end-column="105" />
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DeviceUser.php">
+    <entry file="file://$PROJECT_DIR$/app/Events/StatusLiked.php" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Device.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/errors.blade.php" />
-    <entry file="file://$PROJECT_DIR$/public/css/my.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state relative-caret-position="328">
+          <caret line="219" column="5" lean-forward="true" selection-start-line="219" selection-start-column="5" selection-end-line="219" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/history.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/alarms/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="14" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="38" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/devices/index.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Mobile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MobileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        <state relative-caret-position="416">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/helpers.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/client.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="640" column="13" selection-start-line="640" selection-start-column="13" selection-end-line="640" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="1009" column="9" lean-forward="true" selection-start-line="1009" selection-start-column="9" selection-end-line="1009" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/client/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/logs/2020-02-10/POST-EXCEPTIONS.txt" />
+    <entry file="file://$PROJECT_DIR$/public/logs/2020-02-12/POST-EXCEPTIONS.txt" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="784">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="58" column="72" lean-forward="true" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Alarm.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/client/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="112" column="56" selection-start-line="112" selection-start-column="56" selection-end-line="112" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DeviceLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/LevelChanged.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlarmController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="66" column="23" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="23" />
-          <folding>
-            <element signature="e#1889#2366#0#PHP" />
-            <element signature="e#2372#4387#0#PHP" />
-            <element signature="e#4393#5633#0#PHP" />
-            <element signature="e#5639#7556#0#PHP" />
-            <element signature="e#7562#8981#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DeviceSetting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="9" column="52" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="52" />
+          <caret line="10" column="222" lean-forward="true" selection-start-line="10" selection-start-column="222" selection-end-line="10" selection-end-column="222" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Listeners/NotifyClients.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+        <state relative-caret-position="440">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Helpers/utils.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/sendNotification.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NotificationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        <state relative-caret-position="398">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/devices/status.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="64" column="13" lean-forward="true" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/devices/showRawData.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Events/LevelChanged.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlarmController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2882">
+          <caret line="135" column="5" selection-start-line="84" selection-start-column="4" selection-end-line="135" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4642">
-          <caret line="220" column="4" selection-start-line="220" selection-start-column="4" selection-end-line="220" selection-end-column="4" />
+        <state relative-caret-position="2794">
+          <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DeviceLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="50" column="76" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/client/reports.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="78" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helpers/jdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="639" column="52" selection-start-line="639" selection-start-column="49" selection-end-line="639" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="e#40#60#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

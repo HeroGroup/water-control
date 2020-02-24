@@ -48,6 +48,7 @@ Route::group(['prefix' => 'client'], function() {
         Route::post('report', 'HomeController@generateRport')->name('client.generateReport');
         Route::get('changePassword', 'UserController@clientChangePassword')->name('client.changePassword');
         Route::post('updateProfile', 'UserController@clientUpdateProfile')->name('client.updateProfile');
+        Route::post('getReport', 'ReportController@getReport')->name('client.getReport');
     });
 });
 

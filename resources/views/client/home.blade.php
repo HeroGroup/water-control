@@ -2,7 +2,6 @@
 @section('content')
 @include('layouts.topMenu', ['routeName' => 'home'])
 <div class="container-index2" style="background-image: url('/images/beautiful-drop-water.jpg');">
-
        <div class="container" style="margin-top:50px; direction:rtl;">
         <div class="row">
             <div class="switch">
@@ -61,9 +60,6 @@
         </div>
         </div>
     </div>
-
-
-
    </div>
 </div>
     <script>
@@ -84,7 +80,9 @@
         var channel = pusher.subscribe('level-changed');
 
         channel.bind('App\\Events\\LevelChanged', function(data) {
-            // your code goes here
+            if (data.deviceId.toString() === "{{session('deviceId')}}") {
+                // your code goes here
+            }
         });
     </script>
 

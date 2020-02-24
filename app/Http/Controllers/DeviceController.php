@@ -138,7 +138,7 @@ class DeviceController extends Controller
             $maxCreated = DeviceLog::where('device_id', $deviceId)->max('created_at');
             $sendDataDuration = Device::find($deviceId)->level_meter_send_data_duration;
             $deviceStatus = strtotime($maxCreated) + ($sendDataDuration*3) > time() ? 'روشن' : 'خاموش';
-            $lastActive = $maxCreated ? jdate('H:i - Y/m/j', strtotime($maxCreated)) : "";
+            $lastActive = $maxCreated ? jdate('H:i - Y/m/j', strtotime($maxCreated)) : '';
 
             return $this->success('success', ['alarms' => $alarms, 'level' => $level, 'status' => $deviceStatus, 'lastActive' => $lastActive]);
         } else {
@@ -186,7 +186,7 @@ class DeviceController extends Controller
     public function getDeviceSettings($deviceId)
     {
         $setting = DeviceSetting::where('device_id', $deviceId)->first();
-        $updated_at = $setting ? jdate('H:i - Y/m/j', strtotime($setting->updated_at)) : "";
+        $updated_at = $setting ? jdate('H:i - Y/m/j', strtotime($setting->updated_at)) : '';
         $level = $setting ? $setting->alarm_level : null;
         $alarmType = $setting ? explode(",", $setting->alarm_type) : [];
 
@@ -215,6 +215,37 @@ class DeviceController extends Controller
         }
     }
 
+    public function getLevel($inputData)
+    {
+        $data = explode('&', $inputData);
+
+        $part1 = array_slice($data,0,20);
+        $part2 = array_slice($data,21,20);
+        $part1IsCorrupted = false;
+        $part2IsCorrupted = false;
+
+        if (current($part1) == -1 && end($part1) == -1 && count(array_unique($part1)) == 1) { // all values are -1 // device is not sending any data
+            $part1IsCorrupted = true;
+        }
+
+        if (current($part2) == -1 && end($part2) == -1 && count(array_unique($part2)) == 1) { // all values are -1 // device is not sending any data
+            $part2IsCorrupted = true;
+        }
+
+        $level = 0;
+        if (!$part1IsCorrupted)
+            for ($i = 0; $i < count($part1); $i+=2)
+                if ($part1[$i] == "1" || $part1[$i + 1] == "1")
+                    $level = $i/2 + 1;
+
+        if (!$part2IsCorrupted)
+            for ($i = 0; $i < count($part2); $i += 2)
+                if ($part2[$i] == 1 || $part2[$i + 1] == 1)
+                    $level = intdiv($i, 2) + 11;
+
+        return $level;
+    }
+
     // ===========      START API     ===========  //
     public function postDeviceData(Request $request)
     {
@@ -228,14 +259,14 @@ class DeviceController extends Controller
                 if ($device) {
                     $log = new DeviceLog([
                         'device_id' => $device->id,
-                        'input_data' => $body->data
+                        'input_data' => $body->data,
+                        'level' => $this->getLevel($body->data)
                     ]);
 
                     $log->save();
 
-                    $ac = new AlarmController();
                     $sendNotificationResult = "";
-                    $currentLevel = $ac->getLevel($device->id);
+                    $currentLevel = $log->level;
                     $deviceSetting = DeviceSetting::where('device_id', $device->id);
                     if ($deviceSetting && $currentLevel >= $deviceSetting->first()->alarm_level) {
                         if (strpos($deviceSetting->first()->alarm_type, 'notification') >= 0) {

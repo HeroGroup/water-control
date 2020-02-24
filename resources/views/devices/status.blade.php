@@ -4,8 +4,8 @@
         <div class="col-md-6">
             <div style="position: relative; width: 100%; height: 500px; border: 2px solid gray; border-top: none; border-radius: 0 0 5px 5px; display: inline-block; background-image: linear-gradient(to top, #3498db 30%, #c0392b 70%);">
                 <div id="empty-area" style="width: 100%; height: {{500-($level*25)}}px; position: absolute; top: 0; right: 0; background-color: white;"></div>
-                <div id="full-area" style="width: 100%; height: {{$level*25}}px; border-radius: 0 0 4px 4px; position: absolute; bottom: 0; right: 0; display: flex; justify-content: center; align-items: center;">
-                    <span style="color: white; font-size: 20px;">سطح <span id="level-number">{{$level}}</span></span>
+                <div id="full-area" style="width: 100%; height: {{$level*25}}px; border-radius: 0 0 4px 4px; position: absolute; bottom: 0; right: 0; display: flex; justify-content: center; align-items: center; border-bottom:2px solid gray;">
+                    <span style="color: white; font-size: 20px;">سطح <b id="level-number">{{$level}}</b></span>
                 </div>
             </div>
         </div>
@@ -39,16 +39,14 @@
         </div>
     </div>
     {{--<script src="https://js.pusher.com/5.0/pusher.min.js"></script>--}}
-    <script src="//js.pusher.com/3.1/pusher.min.js"></script>
-    {{--<script src="/js/pusher.min.js" type="text/javascript"></script>--}}
+    {{--<script src="//js.pusher.com/3.1/pusher.min.js"></script>--}}
+    <script src="/js/pusher.min.js" type="text/javascript"></script>
     <script>
         var pusher = new Pusher('bd1d5d92cd0fc2db2711', {
             encrypted: true,
             cluster: 'ap2'
         });
-
         var channel = pusher.subscribe('level-changed');
-
         channel.bind('App\\Events\\LevelChanged', function(data) {
             if (data.deviceId.toString() === "{{$device->id}}") {
                 $("#empty-area").animate({height: 500-(data.level*25)+'px'}, 500);
