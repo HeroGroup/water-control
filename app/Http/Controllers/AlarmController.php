@@ -104,32 +104,14 @@ class AlarmController extends Controller
             }
 
             if (!$part1IsCorrupted)
-                for ($i = 0; $i < count($part1); $i+=2)
-                    if ($part1[$i] == "1" || $part1[$i + 1] == "1")
+                for ($i = 2; $i < count($part1); $i+=2) // for ($i = 0; $i < count($part1); $i+=2)
+                    if ($part1[$i] == "1") // if ($part1[$i] == "1" || $part1[$i + 1] == "1")
                         $level = $i/2 + 1;
 
             if (!$part2IsCorrupted)
-                for ($i = 0; $i < count($part2); $i += 2)
-                    if ($part2[$i] == 1 || $part2[$i + 1] == 1)
+                for ($i = 2; $i < count($part2); $i += 2) // for ($i = 0; $i < count($part2); $i += 2)
+                    if ($part2[$i] == "1") // if ($part2[$i] == 1 || $part2[$i + 1] == 1)
                         $level = intdiv($i, 2) + 11;
-/*
-            $compactData = [];
-            for ($i = 0; $i < count($data); $i += 2) {
-                // $index = intdiv($i, 2);
-                // $compactData[$index] = ($data[$i] == "1" || $data[$i + 1] == "1") ? "1" : "0";
-                $compactData[$i] = ($data[$i] == "1" || $data[$i + 1] == "1") ? "1" : "0";
-            }
-
-            for ($i = 0; $i < count($compactData); $i++) {
-                if ($compactData[$i] == "1") {
-                    $level = $i + 1;
-                    for ($j = $i; $j < count($compactData) - $i + 1; $j++) {
-                        if ($compactData[$j] == "1")
-                            break;
-                    }
-                }
-            }
-*/
         }
 
         return $level;
@@ -168,7 +150,11 @@ class AlarmController extends Controller
         $part1 = array_slice($data,0,20);
         $part2 = array_slice($data,21,20);
 
+        $part1Corrupted = false;
+        $part2Corrupted = false;
+
         if (current($part1) == -1 && end($part1) == -1 && count(array_unique($part1)) == 1) { // all values are -1
+            $part1Corrupted = true;
             if (DeviceAlarm::where([['device_id', $deviceId],['part_index', 0],['is_cleared', 0]])->count() == 0) {
                 DeviceAlarm::create([
                     'device_id' => $deviceId,
@@ -180,6 +166,7 @@ class AlarmController extends Controller
         }
 
         if (current($part2) == -1 && end($part2) == -1 && count(array_unique($part2)) == 1) { // all values are -1
+            $part2Corrupted = true;
             if (DeviceAlarm::where([['device_id', $deviceId],['part_index', 1],['is_cleared', 0]])->count() == 0) {
                 DeviceAlarm::create([
                     'device_id' => $deviceId,
@@ -190,6 +177,46 @@ class AlarmController extends Controller
             }
         }
 
+        if (!$part1Corrupted) {
+            for ($i = 2; $i < count($part1)-2; $i+=2) {
+                if ($data[$i] == "0") {
+                    for ($j = $i+2; $j < count($part1)-$j; $j+=2) {
+                        if ($data[$j] == "1") { // $i is broken sensor
+                            if (DeviceAlarm::where([['device_id', $deviceId],['sensor_index', $i],['is_cleared', 0]])->count() == 0) {
+                                DeviceAlarm::create([
+                                    'device_id' => $deviceId,
+                                    'sensor_index' => $i,
+                                    'alarm_id' => 2,
+                                    'is_cleared' => false
+                                ]);
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (!$part2Corrupted) {
+            for ($i = 2; $i < count($part2)-2; $i+=2) {
+                if ($data[$i] == "0") {
+                    for ($j = $i+2; $j < count($part2)-$j; $j+=2) {
+                        if ($data[$j] == "1") { // $i is broken sensor
+                            if (DeviceAlarm::where([['device_id', $deviceId],['sensor_index', $i+21],['is_cleared', 0]])->count() == 0) {
+                                DeviceAlarm::create([
+                                    'device_id' => $deviceId,
+                                    'sensor_index' => $i+21,
+                                    'alarm_id' => 2,
+                                    'is_cleared' => false
+                                ]);
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+/*
         for ($i = 0; $i < count($data); $i++) {
             if ($data[$i] == "0") {
                 for ($j = 0; $j < count($data); $j++) {
@@ -207,6 +234,7 @@ class AlarmController extends Controller
                 }
             }
         }
+*/
     }
 
     public function clearAlarms($deviceId, $inputData)

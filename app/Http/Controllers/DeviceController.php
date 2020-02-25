@@ -234,13 +234,13 @@ class DeviceController extends Controller
 
         $level = 0;
         if (!$part1IsCorrupted)
-            for ($i = 0; $i < count($part1); $i+=2)
-                if ($part1[$i] == "1" || $part1[$i + 1] == "1")
+            for ($i = 2; $i < count($part1); $i+=2) // for ($i = 0; $i < count($part1); $i+=2)
+                if ($part1[$i] == "1") // if ($part1[$i] == "1" || $part1[$i + 1] == "1")
                     $level = $i/2 + 1;
 
         if (!$part2IsCorrupted)
-            for ($i = 0; $i < count($part2); $i += 2)
-                if ($part2[$i] == 1 || $part2[$i + 1] == 1)
+            for ($i = 2; $i < count($part2); $i += 2) // for ($i = 0; $i < count($part2); $i += 2)
+                if ($part2[$i] == "1") // if ($part2[$i] == 1 || $part2[$i + 1] == 1)
                     $level = intdiv($i, 2) + 11;
 
         return $level;
@@ -272,7 +272,7 @@ class DeviceController extends Controller
                         if (strpos($deviceSetting->first()->alarm_type, 'notification') >= 0) {
                             foreach ($device->activeUsers as $deviceUser)
                                 if ($deviceUser->user && $deviceUser->user->fcm_token != null && strlen($deviceUser->user->fcm_token) > 0)
-                                    $sendNotificationResult .= NotificationController::send('اخطار', 'آب بالاتر از سطح اخطار آمده است.', null, $deviceUser->user->fcm_token);
+                                    $sendNotificationResult .= NotificationController::send('هشدار', "آب بالاتر از سطح اخطار آمده است. سطح کنونی $currentLevel", null, $deviceUser->user->fcm_token);
                         }
                         if (strpos($deviceSetting->first()->alarm_type, 'sms') >= 0) {
                             // send sms
